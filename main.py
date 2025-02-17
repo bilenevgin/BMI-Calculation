@@ -11,7 +11,19 @@ def bmi_calculation():
             weight = float(weight)
             height = float(height)/100
             bmi = weight / (height ** 2)
-            label_bmi.config(text =f"BMI: {bmi:.2f}")
+            if bmi < 18.5:
+                label_bmi.config(text =f"BMI: {bmi:.2f} You are Under weight")
+            elif 18.5 <= bmi < 25:
+                label_bmi.config(text=f"BMI: {bmi:.2f} You are Normal weight")
+            elif 25 <= bmi < 30:
+                label_bmi.config(text=f"BMI: {bmi:.2f} You are Over weight")
+            elif 30 <= bmi < 35:
+                label_bmi.config(text=f"BMI: {bmi:.2f} You are first degree Obesity")
+            elif 35 <= bmi < 40:
+                label_bmi.config(text=f"BMI: {bmi:.2f} You are second degree Obesity")
+            elif bmi >= 40:
+                label_bmi.config(text=f"BMI: {bmi:.2f} You are third degree Obesity")
+
         except:
             label_bmi.config(text ="Please enter valid values")
 
